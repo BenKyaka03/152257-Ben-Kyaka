@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CATATU Phase 0</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>CATATU</h1>
+      <p>Phase 0 Booking Console</p>
+    </header>
+
+    <main>
+      <section class="panel">
+        <h2>Available Routes</h2>
+        <div id="routes" class="cards"></div>
+      </section>
+
+      <section class="panel">
+        <h2>Reserve a Seat</h2>
+        <form id="booking-form">
+          <label>
+            Passenger Name
+            <input id="passengerName" required />
+          </label>
+          <label>
+            Phone
+            <input id="passengerPhone" required />
+          </label>
+          <label>
+            Route
+            <select id="routeSelect" required></select>
+          </label>
+          <label>
+            Seat Number
+            <input id="seatNumber" type="number" min="1" required />
+          </label>
+          <button type="submit">Book Seat</button>
+        </form>
+        <p id="booking-message" aria-live="polite"></p>
+      </section>
+
+      <section class="panel">
+        <h2>Admin Panel</h2>
+        <form id="route-form">
+          <label>
+            Origin
+            <input id="origin" required />
+          </label>
+          <label>
+            Destination
+            <input id="destination" required />
+          </label>
+          <label>
+            Departure Time
+            <input id="departureTime" type="datetime-local" required />
+          </label>
+          <label>
+            Total Seats
+            <input id="totalSeats" type="number" min="1" value="36" required />
+          </label>
+          <label>
+            Price (KSh)
+            <input id="price" type="number" min="0" value="500" required />
+          </label>
+          <button type="submit">Add Route</button>
+        </form>
+      </section>
+
+      <section class="panel">
+        <h2>Bookings</h2>
+        <div id="bookings"></div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
